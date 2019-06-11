@@ -13,7 +13,7 @@ var ArticleSchema = new Schema({
   },
   summary: {
     type: String,
-    require: true
+    required: true
   },
   author: {
     type: String
