@@ -1,0 +1,27 @@
+.header-image {
+  position: relative;
+  background: url("../Images/bg-img.jpg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  height: 100vh;
+}
+
+.navlinks {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  text-decoration: none;
+  background-color: #0074d9;
+  color: #ffffff;
+}
+
+.navbutton {
+  background-color: #ff4136;
+  color: #ffffff;
+  
+}

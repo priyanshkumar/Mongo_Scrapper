@@ -6,7 +6,7 @@ var NoteSchema = new Schema({
   body: {
     type: String
   }
-});
+}); 
 
 var Note = mongoose.model("Note", NoteSchema);
 
