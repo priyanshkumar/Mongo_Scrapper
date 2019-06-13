@@ -16,12 +16,26 @@
   position: absolute;
   z-index: 1;
   text-decoration: none;
-  background-color: #0074d9;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #333333;
 }
 
 .navbutton {
   background-color: #ff4136;
   color: #ffffff;
-  
+  transition-duration: 1000ms;
+  transition-property: all;
+}
+
+.navbutton:hover {
+  background-color: #4bffa5;
+  color: #040f3d;
+  transform: rotateZ(3deg);
+}
+.custom-hr {
+  background-color: #cfd4d1;
+}
+
+.custom-hr2 {
+  background-color: #f9f9f9;
 }

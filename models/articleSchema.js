@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 
-var Schema = mongoose.schema;
+// Save a reference to the Schema constructor
+var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
   title: {
@@ -17,13 +18,7 @@ var ArticleSchema = new Schema({
   },
   author: {
     type: String
-  },
-  note: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Note"
-    }
-  ]
+  }
 });
 
 var Article = mongoose.model("Article", ArticleSchema);
