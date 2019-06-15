@@ -1,5 +1,4 @@
 .header-image {
-  position: relative;
   background: url("../Images/bg-img.jpg");
 
   background-position: center;
@@ -13,7 +12,6 @@
 
 .navlinks {
   width: 100%;
-  position: absolute;
   z-index: 1;
   text-decoration: none;
   background-color: #ffffff;
@@ -38,4 +36,14 @@
 
 .custom-hr2 {
   background-color: #f9f9f9;
+}
+
+.note {
+  border: 1px solid black;
+  border-radius: 2%;
+}
+
+ion-icon {
+  color: red;
+  font-size: 28px;
 }
