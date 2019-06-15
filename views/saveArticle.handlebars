@@ -21,7 +21,7 @@
                 </a>
             </div>
             <div class="col-2 mt-2 d-flex justify-content-center h-25">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">ADD
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{_id}}">ADD
                     NOTE</button>
             </div>
             <div class="col-2 mt-2">
@@ -42,7 +42,7 @@
             </div>
         </div>
         <hr class="custom-hr">
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -54,8 +54,8 @@
                     </div>
                     <div class="modal-body">
                         <form action="/api/saved/note/{{_id}}" method="POST">
-                            <div class="row note mx-2 p-2">
-                                {{#each notes}}
+                            {{#each notes}}
+                            <div class="row note mb-1 mx-2 p-2">
                                 <div class="col-10">
                                     <p class="m-0">{{body}}
                                     </p>
@@ -65,8 +65,8 @@
                                         <ion-icon name="trash"></ion-icon>
                                     </a>
                                 </div>
-                                {{/each}}
                             </div>
+                            {{/each}}
                             <div class="form-group">
                                 <label for="message-text" class="col-form-label">Note:</label>
                                 <textarea class="form-control" name="body" id="message-text"></textarea>

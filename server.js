@@ -89,7 +89,6 @@ app.get("/api/save/:id", function(req, res) {
         summary: result.summary,
         author: result.author
       };
-      console.log(saveResult);
       db.Save.create(saveResult)
         .then(() => {
           db.Article.findOneAndRemove(req.params.id)
@@ -140,11 +139,13 @@ app.post("/api/saved/note/:id", function(req, res) {
         { _id: req.params.id },
         { $push: { notes: response._id } },
         { new: true }
-      ).then(function() {
-        res.redirect("/saved/article");
-      }).catch(function(err) {
-        console.log(err);
-      });;
+      )
+        .then(function() {
+          res.redirect("/saved/article");
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
     })
     .catch(function(err) {
       console.log(err);
@@ -152,11 +153,13 @@ app.post("/api/saved/note/:id", function(req, res) {
 });
 
 app.get("/api/saved/note/delete/:id", function(req, res) {
-  db.Note.findOneAndRemove({ _id: req.params.id }).then(function() {
-    res.redirect("/saved/article");
-  }).catch(function(err) {
-    console.log(err);
-  });
+  db.Note.findOneAndRemove({ _id: req.params.id })
+    .then(function() {
+      res.redirect("/saved/article");
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 });
 
 app.listen(PORT, function() {
