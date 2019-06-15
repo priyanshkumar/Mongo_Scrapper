@@ -16,7 +16,10 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/mongoscrapper", {
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true
 });
 
